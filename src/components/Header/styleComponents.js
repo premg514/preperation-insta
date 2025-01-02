@@ -140,8 +140,7 @@ export const Button = styled.button`
   }
 `;
 
-import styled from 'styled-components';
-import { FaAngleDown } from 'react-icons/fa';
+
 
 export const ArrowIcon = styled(FaAngleDown)`
   margin-left: 5px;
