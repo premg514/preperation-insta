@@ -4,7 +4,6 @@ export const HomeContainer = styled.div`
   height: 100vh;
   width: 100vw;
  background: linear-gradient(to right, #00bfff 30%, #00008b 60%, black 100%);
-  padding: 20px;
   margin: 0;
 `;
 

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { FaVideo, FaVideoSlash } from "react-icons/fa6";
 
 export const Container = styled.div`
-  padding: 30px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   display: flex;
   flex-direction: column;
@@ -11,11 +10,12 @@ export const Container = styled.div`
   background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
   min-height: 100vh;
   color: #334155;
+  width:100vw;
+  
 `;
 
 export const ExperienceDetailContainer = styled.div`
-  max-width: 900px;
-  flex: 1 1;
+  width: 800px;
   padding: 30px;
   background: linear-gradient(135deg, #ffffff, #f0f9ff);
   border: 1px solid #e0f2fe;
@@ -27,6 +27,9 @@ export const ExperienceDetailContainer = styled.div`
   height: auto;
   overflow-y: auto;
   margin: 0 auto;
+  @media (max-width: 700px) {
+  width: 100%;
+  }
 `;
 
 export const ExperienceImage = styled.img`
@@ -83,6 +86,11 @@ export const LayoutContainer = styled.div`
   max-width: 1200px;
   margin: 50px auto;
   justify-content: space-between;
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 `;
 
 export const SimilarExperiencesContainer = styled.div`
@@ -95,7 +103,7 @@ export const SimilarExperiencesContainer = styled.div`
   color: #475569;
   overflow-y: auto;
   height: auto;
-  flex: 0.4;
+  flex 1 1;
   max-height: 80vh;
 `;
 

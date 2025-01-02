@@ -1,185 +1,199 @@
 import styled from 'styled-components';
 import { FaAngleDown } from "react-icons/fa";
 
+const COLORS = {
+  primary: '#0070f3',
+  secondary: '#666666',
+  background: '#ffffff',
+  text: '#000000',
+  border: '#e4e4e7',
+  hover: '#f4f4f5'
+};
+
+const BREAKPOINTS = {
+  mobile: '480px',
+  tablet: '768px',
+  desktop: '1024px'
+};
 
 export const NavDiv = styled.div`
-  font-family: 'Poppins', Arial, sans-serif;
-  width: 90vw;
+  font-family: system-ui, -apple-system, sans-serif;
+  width: 100%;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-radius: 25px;
-  background-color: #ffffff;
+  background-color: ${COLORS.background};
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 `;
 
 export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 16px;
-  color: #000000;
-  background: linear-gradient(to bottom right, #ffffff, #cce7ff); 
-  border-radius: 25px;
+  padding: 1rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  
+  @media (max-width: ${BREAKPOINTS.mobile}) {
+    padding: 0.75rem;
+  }
 `;
 
 export const NavOptions = styled.div`
   display: flex;
-  justify-content: space-between;
-  width: 50vw;
+  align-items: center;
+  gap: 1rem;
   position: relative;
 
-  @media (max-width: 480px) {
+  @media (max-width: ${BREAKPOINTS.tablet}) {
     display: none;
   }
 `;
 
 export const OptionButton = styled.button`
-  font-size: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid transparent;
+  background: transparent;
+  color: ${COLORS.text};
   cursor: pointer;
-  padding: 10px 15px;
-  transition: background-color 0.3s ease, border 0.3s ease;
-  border: none;
-  border-radius: 50px;
-  color:#ffffff;
-   background: #121212; 
-  margin: 5px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
   &:hover {
-    color: #ffffff;
-    background-color: #666666; 
-    border: 2px solid #ffffff;
+    background: ${COLORS.hover};
+    color: ${COLORS.primary};
   }
 
-  &:active {
-    background-color: #555555; 
-    border: 2px solid #38a9f5;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-    text-align: left;
-    width: 100%;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px ${COLORS.primary}20;
   }
 `;
 
 
 export const DropdownMenu = styled.div`
-  background-color:#ffffff;
-  border: 1px solid ${(props) => props.theme === 'dark' ? '#555555' : '#ddd'};
-  box-shadow: 0 4px 8px ${(props) => props.theme === 'dark' ? darkTheme.shadow : 'rgba(0, 0, 0, 0.1)'};
-  border-radius: 5px;
-  padding: 5px;
-  width: 100%;
-  margin-top: 10px;
+ background: ${COLORS.background};
+  border: 1px solid ${COLORS.border};
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  min-width: 220px;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
   @media (min-width: 481px) {
     position: absolute;
-    top: 42px;
+    top: 30px;
     left: 0;
     width: 200px;
     margin-top: 0;
   }
 `;
 
+
 export const SubMenu = styled.div`
-  background-color: #ffffff;
-  border: 1px solid #555555;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  padding: 10px;
-  width: 100%;
-  margin-top: 10px;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: ${COLORS.background};
+  border: 1px solid ${COLORS.border};
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  min-height: 210px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
-  height: 60vh;
-  overflow-y: scroll;
-  flex: 1 1;
-  @media (min-width: 481px) {
-    position: absolute;
-    top: 0;
-    left: 200px;
-    width: 200px;
-    margin-top: 0;
-    height: 60vh;
-    overflow-y: scroll;
+  gap: 0.25rem;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${COLORS.hover};
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${COLORS.secondary};
+    border-radius: 3px;
+  }
+
+  @media (max-width: ${BREAKPOINTS.tablet}) {
+    position: relative;
+    left: 0;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid ${COLORS.border};
+    margin-left: 1rem;
   }
 `;
 
+
 export const Logo = styled.h4`
-  color: ${(props) => props.theme === 'dark' ? '#ffffff' : '#000000'};
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-  &:hover {
-    cursor: pointer;
-  }
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, ${COLORS.primary}, #7928ca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  margin: 0;
 `;
 
 export const Button = styled.button`
-   color:#ffffff;
-   background: #121212; 
-  padding: 10px 15px;
-  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, border 0.3s ease;
+  transition: all 0.2s ease;
+  
+  &:first-of-type {
+    background: transparent;
+    border: 1px solid ${COLORS.border};
+    color: ${COLORS.text};
+    margin-right: 0.5rem;
 
-  &:hover {
-    background-color: #666666;
-    border: 2px solid #646cff;
+    &:hover {
+      background: ${COLORS.hover};
+      border-color: ${COLORS.secondary};
+    }
   }
 
-  &:active {
-    background-color: #888888;
-    border: 2px solid #1e90ff;
-  }
+  &:last-of-type {
+    background: ${COLORS.primary};
+    border: 1px solid transparent;
+    color: white;
 
-  @media (max-width: 480px) {
-    padding: 8px 12px;
-    font-size: 0.9rem;
+    &:hover {
+      background: ${COLORS.primary}ee;
+    }
   }
 `;
+
 
 
 
 export const ArrowIcon = styled(FaAngleDown)`
-  margin-left: 5px;
-  color: #ffffff;
-  ${(props) =>
-    props.rotate &&
-    `
-    @keyframes rotateAnimation {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(180deg);
-      }
-    }
-
-    animation: rotateAnimation 0.3s ease-in-out;
-  `}
+  transition: transform 0.2s ease;
+  transform: ${props => props.rotate ? 'rotate(180deg)' : 'rotate(0deg)'};
 `;
 
-
-export const MenuButton = styled.button`
-  background-color: ${(props) => props.theme === 'dark' ? '#444444' : 'white'};
-  color: ${(props) => props.theme === 'dark' ? '#ffffff' : 'black'};
-  font-size: 15px;
-  padding: 10px 12px;
-  border: none;
-  cursor: pointer;
-
-  @media (min-width: 481px) {
-    display: none;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1.2rem;
-    padding: 10px;
-  }
+export const MobileSubmenu = styled.div`
+  background: ${COLORS.background}f5;
+  padding-left: 1rem;
+  max-height: ${props => props.isOpen ? '500px' : '0'};
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 `;
-
 export const NavOptionsMobile = styled.div`
   display: none;
 
@@ -189,10 +203,13 @@ export const NavOptionsMobile = styled.div`
     align-items: flex-start;
     padding: 10px;
      color:#ffffff;
-   background: #121212; 
-    border: 1px solid #555555;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+  background: ${COLORS.background};
+  border: 1px solid ${COLORS.border};
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  min-width: 220px;
+  padding: 0.5rem;
+
     position: absolute;
     top: 40px;
     left: 0;
@@ -202,21 +219,38 @@ export const NavOptionsMobile = styled.div`
 `;
 
 export const OptionButtonMobile = styled.button`
-  border-radius: 50px;
-  color:#ffffff;
-   background: #121212; 
-  margin: 5px;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 10px 15px;
-  text-align: left;
-  width: 100%;
-  transition: background-color 0.3s ease, border 0.3s ease;
+font-size: 0.875rem;
+font-weight: 500;
+padding: 0.5rem 1rem;
+border-radius: 0.375rem;
+border: 1px solid transparent;
+background: transparent;
+color: ${COLORS.text};
+cursor: pointer;
+transition: all 0.2s ease;
+display: flex;
+align-items: center;
+gap: 0.5rem;
 
-  &:active {
-    background-color:#1e90ff;
-    border: 2px solid #38a9f5;
+&:hover {
+  background: ${COLORS.hover};
+  color: ${COLORS.primary};
+}
+
+&:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px ${COLORS.primary}20;
+}
+`;
+export const MenuButton = styled.button`
+  display: none;
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: ${COLORS.text};
+  
+  @media (max-width: ${BREAKPOINTS.tablet}) {
+    display: block;
   }
 `;
-

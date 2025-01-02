@@ -1,12 +1,9 @@
 import styled from 'styled-components';
-import { FaRegStar, FaCode, FaClipboardList, FaRegLightbulb, FaClock } from 'react-icons/fa';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 30px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
   min-height: 100vh;
@@ -14,40 +11,76 @@ export const Container = styled.div`
   box-sizing: border-box;
 `;
 
-export const SectionTitle = styled.h2`
+export const SectionTitle = styled.h1`
   font-size: 2.5rem;
   text-align: center;
-  color: #0891b2; /* Blue for section titles */
-  margin-bottom: 30px;
+  color: #0891b2;
+  margin: 2rem 0;
+  padding: 1rem;
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  border-bottom: 3px solid #e2e8f0;
 
   svg {
-    color: #0e7490; /* Darker blue for icons */
+    color: #0e7490;
+    font-size: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
   }
 `;
 
 export const SectionContent = styled.div`
-  background: #ffffff; /* White background for content sections */
+  background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 25px;
-  margin-top: 20px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  width: 100%;
+  max-width: 1000px;
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: #0891b2;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    svg {
+      color: #0e7490;
+    }
   }
 
   h3 {
-    font-size: 1.8rem;
-    color: #0891b2; /* Blue for subtitles */
-    margin-bottom: 15px;
+    font-size: 1.75rem;
+    color: #1e293b;
+    margin: 1.5rem 0;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.75rem;
+
+    svg {
+      color: #0891b2;
+    }
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    color: #334155;
+    margin: 1.25rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 
     svg {
       color: #0891b2;
@@ -56,76 +89,101 @@ export const SectionContent = styled.div`
 
   p {
     font-size: 1.1rem;
-    color: #475569; /* Grey for text */
+    color: #475569;
     line-height: 1.6;
-    margin-bottom: 15px;
+    margin: 1rem 0;
   }
 
   ul {
     list-style-type: none;
-    margin: 10px 0 0 0;
+    margin: 1rem 0;
     padding: 0;
   }
 
   li {
     font-size: 1.1rem;
-    color: #0891b2; /* Blue for list items */
-    margin-bottom: 10px;
+    color: #475569;
+    margin: 0.75rem 0;
+    padding: 0.5rem;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.75rem;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
-      color: #0e7490;
+      border-left-color: #0891b2;
+      background: #f8fafc;
     }
 
     svg {
-      color: #ffab00; /* Icon color */
+      color: #0891b2;
+      min-width: 1.25rem;
     }
+  }
+
+  .topic-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid #0891b2;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    margin: 1rem 0;
+    width: 90%;
   }
 `;
 
 export const TopicItem = styled.li`
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.1rem;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
   color: #475569;
-  line-height: 1.8;
-  border-left: 4px solid #0891b2; /* Blue accent */
-  padding-left: 10px;
+  background: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.75rem;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
+    transform: translateX(5px);
+    border-color: #0891b2;
     background: #f1f5f9;
-    color: #0891b2;
   }
 
   svg {
-    color: #ffab00;
+    color: #10b981;
+    min-width: 1.25rem;
   }
 `;
 
 export const DownloadButton = styled.button`
-  background-color: #0891b2; /* Blue for button */
-  color: #ffffff; /* White text on button */
+  background-color: #0891b2;
+  color: #ffffff;
   border: none;
-  padding: 12px 25px;
-  font-size: 1.3rem;
-  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 2rem;
+  right: 2rem;
   z-index: 9999;
+  width: 3.5rem;
+  height: 3.5rem;
 
   &:hover {
-    background-color: #0e7490; /* Darker blue on hover */
+    background-color: #0e7490;
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
@@ -141,7 +199,10 @@ export const DownloadButton = styled.button`
   }
 
   @media (max-width: 768px) {
-    font-size: 1.1rem;
-    padding: 10px 20px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
   }
 `;

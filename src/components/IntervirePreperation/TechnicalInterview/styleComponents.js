@@ -4,7 +4,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
   min-height: 100vh;
