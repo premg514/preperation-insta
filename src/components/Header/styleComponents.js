@@ -17,7 +17,9 @@ const BREAKPOINTS = {
 };
 
 export const NavDiv = styled.div`
-  font-family: system-ui, -apple-system, sans-serif;
+  display:flex;
+  justify-content:center;
+  font-family: Inter ;
   width: 100%;
   position: sticky;
   top: 0;
@@ -31,8 +33,8 @@ export const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  max-width: 1280px;
-  margin: 0 auto;
+  width:100%;
+
   
   @media (max-width: ${BREAKPOINTS.mobile}) {
     padding: 0.75rem;
@@ -64,11 +66,6 @@ export const OptionButton = styled.button`
   align-items: center;
   gap: 0.5rem;
 
-  &:hover {
-    background: ${COLORS.hover};
-    color: ${COLORS.primary};
-  }
-
   &:focus {
     outline: none;
     box-shadow: 0 0 0 2px ${COLORS.primary}20;
@@ -86,7 +83,7 @@ export const DropdownMenu = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  @media (min-width: 481px) {
+  @media (min-width: 768px) {
     position: absolute;
     top: 30px;
     left: 0;
@@ -141,45 +138,97 @@ export const SubMenu = styled.div`
 export const Logo = styled.h4`
   font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, ${COLORS.primary}, #7928ca);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color:#000000;
   cursor: pointer;
   margin: 0;
 `;
 
-export const Button = styled.button`
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  font-size: 0.875rem;
-  font-weight: 500;
+export const Button1 = styled.button`
+  width:99px;
+  height:40px;
+  background-color: none;
+  color: #000000;
+  border: 1px solid #0B5FFF;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  
-  &:first-of-type {
-    background: transparent;
-    border: 1px solid ${COLORS.border};
-    color: ${COLORS.text};
-    margin-right: 0.5rem;
+  transition: background-color 0.3s;
+  letter-spacing: 0.9px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-right:10px;
 
-    &:hover {
-      background: ${COLORS.hover};
-      border-color: ${COLORS.secondary};
+  &:hover {
+    border-color: transparent;
+    transform: translateY(-1px);
+    
+    &::after {
+      opacity: 1;
     }
   }
 
-  &:last-of-type {
-    background: ${COLORS.primary};
-    border: 1px solid transparent;
-    color: white;
+  &:active {
+    transform: translateY(1px);
+  }
 
-    &:hover {
-      background: ${COLORS.primary}ee;
+  &:disabled {
+    background-color: #f5f5f5;
+    border-color: #eee;
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+    
+    &::after {
+      display: none;
     }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem 1rem;
+    font-size: 16px;
   }
 `;
 
+export const Button2 = styled.button`
+  width:99px;
+  height:40px;
+  background-color: #0B5FFF;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  letter-spacing: 0.9px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 
+&:hover {
+    border-color: transparent;
+    transform: translateY(-1px);
+    
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:disabled {
+    background-color: #f5f5f5;
+    border-color: #eee;
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+    
+    &::after {
+      display: none;
+    }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+  }
+`;
 
 
 export const ArrowIcon = styled(FaAngleDown)`
@@ -196,8 +245,7 @@ export const MobileSubmenu = styled.div`
 `;
 export const NavOptionsMobile = styled.div`
   display: none;
-
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;

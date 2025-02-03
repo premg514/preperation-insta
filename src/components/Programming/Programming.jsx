@@ -31,7 +31,7 @@ import {
   AssignmentDifficulty
 } from './styleComponents';
 import Header from '../Header/Header';
-import programmingDetails from '../Data/programming';
+import programmingDetails from '../../Data/programming';
 
 const IconWrapper = ({ children }) => (
   <span className="mr-2 inline-flex items-center text-blue-600">
@@ -74,7 +74,6 @@ const Programming = () => {
 
   return (
     <Container>
-      <Header />
       <Heading>
         {data.name} <FaCode />
       </Heading>
@@ -87,29 +86,29 @@ const Programming = () => {
         <strong>Difficulty:</strong> {data.difficulty}
       </Paragraph>
 
-      <SectionWithList 
-        title="Use Cases" 
-        items={data.useCases} 
+      <SectionWithList
+        title="Use Cases"
+        items={data.useCases}
         icon={FaLaptopCode}
       />
-      <SectionWithList 
-        title="Learning Resources" 
-        items={data.learningResources} 
+      <SectionWithList
+        title="Learning Resources"
+        items={data.learningResources}
         icon={FaBook}
       />
-      <SectionWithList 
-        title="Best For" 
-        items={data.bestFor} 
+      <SectionWithList
+        title="Best For"
+        items={data.bestFor}
         icon={FaLightbulb}
       />
-      <SectionWithList 
-        title="Tools" 
-        items={data.tools} 
+      <SectionWithList
+        title="Tools"
+        items={data.tools}
         icon={FaTools}
       />
-      <SectionWithList 
-        title="Key Concepts" 
-        items={data.keyConcepts} 
+      <SectionWithList
+        title="Key Concepts"
+        items={data.keyConcepts}
         icon={FaGraduationCap}
       />
 
@@ -158,8 +157,8 @@ const Programming = () => {
               <h4>{assignment.title}</h4>
               <p>{assignment.description}</p>
               <AssignmentDifficulty level={assignment.difficulty}>
-                  Difficulty: {assignment.difficulty}
-                </AssignmentDifficulty>
+                Difficulty: {assignment.difficulty}
+              </AssignmentDifficulty>
             </AssignmentItem>
           ))}
         </AssignmentSection>

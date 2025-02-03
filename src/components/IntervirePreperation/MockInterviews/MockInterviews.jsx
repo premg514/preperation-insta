@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../Header/Header';
-import interviewPrepData from '../../Data/interviewPrep';
+import interviewPrepData from '../../../Data/interviewPrep';
 import {
     Card,
     Container,
@@ -27,12 +27,11 @@ const MockInterviews = () => {
 
     return (
         <Container>
-            <Header />
-            
+
             <Card>
                 <Heading>{data.heading}</Heading>
                 <Paragraph>{data.description}</Paragraph>
-                
+
                 <ContentSection>
                     {data.rounds.map((round, index) => (
                         <RoundItem key={index}>
@@ -40,7 +39,7 @@ const MockInterviews = () => {
                         </RoundItem>
                     ))}
                 </ContentSection>
-                
+
                 <Paragraph>{data.detailedDescription}</Paragraph>
             </Card>
 
@@ -60,7 +59,7 @@ const MockInterviews = () => {
                     <AdditionalSection key={index}>
                         <SubHeading>{content.subHeading}</SubHeading>
                         <Paragraph>{content.description}</Paragraph>
-                        
+
                         {content.importantPoints && (
                             <List>
                                 {content.importantPoints.map((point, idx) => (
@@ -68,7 +67,7 @@ const MockInterviews = () => {
                                 ))}
                             </List>
                         )}
-                        
+
                         {content.examples && (
                             <ExamplesSection>
                                 {content.examples.map((example, idx) => (
@@ -76,7 +75,7 @@ const MockInterviews = () => {
                                 ))}
                             </ExamplesSection>
                         )}
-                        
+
                         {content.button && (
                             <ButtonWrapper>
                                 <Button>{content.button}</Button>

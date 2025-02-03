@@ -8,16 +8,17 @@ import {
   OptionButton,
   NavOptionsMobile,
   Logo,
-  Button,
+  Button1,
+  Button2,
   ArrowIcon,
   MenuButton,
   DropdownMenu,
   SubMenu,
   OptionButtonMobile
 } from './styleComponents';
-import interviewExperiences from '../Data/experience';
-import syllabusCompanyData from '../Data/syllabus';
-import programmingDetails from '../Data/programming';
+import interviewExperiences from '../../Data/experience';
+import syllabusCompanyData from '../../Data/syllabus';
+import programmingDetails from '../../Data/programming';
 
 export default function Header() {
   const [menu, setMenu] = useState(false);
@@ -117,12 +118,14 @@ export default function Header() {
           {Object.keys(options).map((each) => (
             <OptionButton key={each}>{options[each]}</OptionButton>
           ))}
+
+          <div>
+            <Button1>Login</Button1>
+            <Button2>Sign Up</Button2>
+          </div>
         </NavOptions>
 
-        <div>
-          <Button>Login</Button>
-          <Button>Get Prime</Button>
-        </div>
+
       </Nav>
 
       {menu && (

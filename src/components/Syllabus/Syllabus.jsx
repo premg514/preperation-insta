@@ -11,7 +11,7 @@ import {
     TopicItem,
     DownloadButton
 } from './styleComponents';
-import syllabusCompanyData from '../Data/syllabus';
+import syllabusCompanyData from '../../Data/syllabus';
 import {
     FaRegStar,
     FaCode,
@@ -52,7 +52,6 @@ const Syllabus = () => {
 
     return (
         <Container ref={contentRef}>
-            <Header />
             <SectionTitle>
                 <FaClipboardList /> {companyData.companyName}
             </SectionTitle>

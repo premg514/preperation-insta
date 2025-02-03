@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../Header/Header';
-import interviewPrepData from '../../Data/interviewPrep';
+import interviewPrepData from '../../../Data/interviewPrep';
 import {
   Container,
   Title,
@@ -18,7 +18,6 @@ export default function Puzzels() {
 
   return (
     <Container>
-      <Header />
       <Title>Puzzles and Brain Teasers</Title>
       <Img
         src="https://www.shutterstock.com/image-vector/modern-collage-halftone-hands-holding-260nw-2492424807.jpg"

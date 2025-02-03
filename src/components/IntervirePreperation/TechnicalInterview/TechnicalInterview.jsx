@@ -11,14 +11,13 @@ import {
   ListItem,
   Img
 } from './styleComponents';
-import interviewPrepData from '../../Data/interviewPrep';
+import interviewPrepData from '../../../Data/interviewPrep';
 
 const TechnicalInterview = () => {
   const data = interviewPrepData[4];
 
   return (
     <Container>
-      <Header />
       <Title>{data.name}</Title>
       <Img src='https://miro.medium.com/v2/resize:fit:2000/1*RqIWcs6kxsVhhrYBWM_7UA.jpeg' alt='image' />
       {data.content.map((section, index) => (

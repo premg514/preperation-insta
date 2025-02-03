@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../Header/Header';
-import interviewPrepData from '../../Data/interviewPrep';
+import interviewPrepData from '../../../Data/interviewPrep';
 import {
   Container,
   Title,
@@ -19,9 +19,8 @@ export default function HrQuestions() {
 
   return (
     <Container>
-      <Header />
       <Title>{data.content[0].mainHeading}</Title>
-      <Img 
+      <Img
         src="https://img.freepik.com/free-vector/job-interview-concept-illustration_114360-24598.jpg"
         alt="HR Image"
       />

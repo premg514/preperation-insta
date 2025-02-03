@@ -12,7 +12,7 @@ import {
   Link,
   Img
 } from './styleComponents';
-import interviewPrepData from '../../Data/interviewPrep';
+import interviewPrepData from '../../../Data/interviewPrep';
 
 const groupDiscussionData = interviewPrepData[5];
 
@@ -21,7 +21,6 @@ const GroupDiscussions = () => {
 
   return (
     <Container>
-      <Header />
       <Title>{data.name}</Title>
       <Img src="https://www.shutterstock.com/shutterstock/videos/16850551/thumb/9.jpg?ip=x480" alt="Group Discussion" />
       {data.content.map((section, index) => (

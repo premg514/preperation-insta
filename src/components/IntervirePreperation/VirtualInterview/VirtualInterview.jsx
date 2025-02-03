@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../Header/Header';
-import interviewPrepData from '../../Data/interviewPrep';
+import interviewPrepData from '../../../Data/interviewPrep';
 import {
   Container,
   Section,
@@ -20,11 +20,10 @@ const VirtualInterview = () => {
   const data = interviewPrepData[2];
   return (
     <Container>
-      <Header />
       <Title>{data.name}</Title>
-      <Img 
-        src='https://media.istockphoto.com/id/1255922590/vector/young-woman-making-video-call-through-computer.jpg?s=612x612&w=0&k=20&c=cEp_0OcrR3zUjAeRoTybHg-Mbol7woRahC993i8cHYg=' 
-        alt='Virtual Interview Image' 
+      <Img
+        src='https://media.istockphoto.com/id/1255922590/vector/young-woman-making-video-call-through-computer.jpg?s=612x612&w=0&k=20&c=cEp_0OcrR3zUjAeRoTybHg-Mbol7woRahC993i8cHYg='
+        alt='Virtual Interview Image'
       />
       {data.content.map((section, index) => (
         <Section key={index}>

@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import Header from '../Header/Header';
 
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
-import interviewExperiences from '../Data/experience';
+import interviewExperiences from '../../Data/experience';
 import {
   Container,
   LayoutContainer,
@@ -21,7 +21,7 @@ import {
   StatusIcon,
   StyledVideoSlashIcon,
   StyledVideoIcon,
-  
+
 } from './styleComponents';
 
 export default function ExperienceDetail() {
@@ -40,7 +40,6 @@ export default function ExperienceDetail() {
 
   return (
     <Container>
-      <Header />
       <LayoutContainer>
         {/* Main Experience Detail */}
         <ExperienceDetailContainer>
@@ -49,7 +48,7 @@ export default function ExperienceDetail() {
             src="https://img.freepik.com/premium-photo/ultimate-job-interview-animated-encounter-two-3d-characters-desk_983420-46778.jpg"
             alt="Interview Experience"
           />
-          
+
           <ExperienceRole>{experience.role}</ExperienceRole>
           <ExperienceText>
             <Highlight>Rounds:</Highlight> {experience.rounds}
