@@ -146,9 +146,9 @@ export const Logo = styled.h4`
 export const Button1 = styled.button`
   width:99px;
   height:40px;
-  background-color: none;
-  color: #000000;
-  border: 1px solid #0B5FFF;
+  background-color: #FC2947;
+  border:none;
+  color: #ffffff;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -190,9 +190,9 @@ export const Button1 = styled.button`
 export const Button2 = styled.button`
   width:99px;
   height:40px;
-  background-color: #0B5FFF;
-  color: #ffffff;
-  border: none;
+  background-color: none;
+  color: #000000;
+  border: 1px solid #ddd;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
