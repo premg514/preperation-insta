@@ -19,12 +19,12 @@ const BREAKPOINTS = {
 export const NavDiv = styled.div`
   display:flex;
   justify-content:center;
-  font-family: Inter ;
+  font-family: "Inter", serif;
   width: 100%;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: ${COLORS.background};
+  background-color: #f3f4f6;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 `;
 
@@ -66,6 +66,9 @@ export const OptionButton = styled.button`
   align-items: center;
   gap: 0.5rem;
 
+  &:hover{
+    background:#f3f4f6;
+  }
   &:focus {
     outline: none;
     box-shadow: 0 0 0 2px ${COLORS.primary}20;
@@ -74,7 +77,7 @@ export const OptionButton = styled.button`
 
 
 export const DropdownMenu = styled.div`
- background: ${COLORS.background};
+ background: #ffffff;
   border: 1px solid ${COLORS.border};
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);

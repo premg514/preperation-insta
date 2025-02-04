@@ -14,7 +14,18 @@ import {
   FeaturesContainer,
   FeatureHeading,
   FeatureDescription,
-  FeaturesCardsContainer
+  FeaturesCardsContainer,
+  MetricsContainer,
+  MetricsTextContainer,
+  MetricsHeading,
+  MetricsPara,
+  MetricsCardsContainer,
+  LineSeperator,
+  FAQContainer,
+  FAQHeading,
+  FAQDescription,
+  FAQItemsContainer
+
 } from './styleComponents';
 
 import googlelogo from '../../assets/googlelogo.png';
@@ -23,7 +34,10 @@ import facebooklogo from '../../assets/facebooklogo.png'
 
 import ImgSlider from '../../components/ImgSlider/ImgSlider';
 import FeatureCard from '../../components/FeatureCard/FeatureCard';
+import MetricsCard from '../../components/MetricsCards/MetricsCard';
 import noImage from '../../assets/noImage.png'
+import FAQItem from '../../components/FAQItem/FAQItem';
+
 
 
 const slides = [
@@ -67,6 +81,53 @@ const featureCards = [
   },
 ]
 
+const metrics = [
+  {
+    value: "200+",
+    label: "Websites build",
+  },
+  {
+    value: "97%",
+    label: "Client satisfaction",
+  },
+  {
+    value: "34+",
+    label: "Team members",
+  },
+  {
+    value: "100+",
+    label: "Amazing clients",
+  },
+]
+
+const FAQ = [
+  {
+    id: "01",
+    question: "What is Webflow and why is it the best website builder?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum egestas orci netus feugiat ut egestas ut sagittis tincidunt phasellus elit etiam cursus orci in. Id sed montes.",
+  },
+  {
+    id: "02",
+    question: "What is your favorite template from BRIX Templates?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+  },
+  {
+    id: "03",
+    question: "How do you clone a Webflow Template?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+  },
+  {
+    id: "04",
+    question: "Why is BRIX Templates the best Webflow agency?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+  },
+]
+
+
 export default function Home() {
   return (
     <HomeContainer>
@@ -89,8 +150,12 @@ export default function Home() {
           </BannerCompaniesContainer>
         </Banner>
       </HomeBannerContainer>
+
+
       <ImgSlider slides={slides} order="1" />
+
       <ImgSlider slides={slides} order="2" />
+
       <FeaturesContainer>
         <div className='textContent' >
           <FeatureHeading>Browse our set of features</FeatureHeading>
@@ -102,6 +167,29 @@ export default function Home() {
           }
         </FeaturesCardsContainer>
       </FeaturesContainer>
+
+      <MetricsContainer>
+        <MetricsTextContainer>
+          <MetricsHeading>Numbers that showcase our success</MetricsHeading>
+          <MetricsPara>Lorem ipsum dolor sit amet consectetur nunc nunc sit velit eget sollicitudin sit posuere augue vestibulum eget turpis lobortis donec sapien integer phasellus quisque.</MetricsPara>
+        </MetricsTextContainer>
+        <MetricsCardsContainer>
+          {
+            metrics.map((each, index) => <MetricsCard card={each} key={index} />)
+          }
+        </MetricsCardsContainer>
+      </MetricsContainer>
+
+      <FAQContainer>
+        <FAQHeading>Frequently Asked Questions</FAQHeading>
+        <FAQDescription>Cras tincidunt lobortis feugiat vivamus at morbi leo urna molestie atole elementum eu facilisis faucibus interdum posuere.</FAQDescription>
+        <FAQItemsContainer>
+          {
+            FAQ.map((each, index) => <FAQItem item={each} key={index} />)
+          }
+        </FAQItemsContainer>
+      </FAQContainer>
+
     </HomeContainer>
   );
 }

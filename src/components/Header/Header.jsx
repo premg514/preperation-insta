@@ -62,7 +62,7 @@ export default function Header() {
           <IoMdMenu />
         </MenuButton>
 
-        <Logo onClick={() => navigate('/')} >LOGO</Logo>
+        <Logo onClick={() => navigate('/')} >brix</Logo>
 
         <NavOptions>
           <OptionButton

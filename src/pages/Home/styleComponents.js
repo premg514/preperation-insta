@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HomeContainer = styled.div`
   margin: 0;
-  width:100vw;
+  max-width:100vw;
   overflow-x:hidden;
   background:#FFFFFF;
   display:flex;
@@ -10,6 +10,9 @@ export const HomeContainer = styled.div`
   justify-content:center;
   align-items:center;
   font-family: "DM Sans", serif;
+  @media (max-width:768px){
+    gap:50px;
+  }
 `;
 
 export const HomeBannerContainer = styled.div`
@@ -179,12 +182,15 @@ export const BannerCompanies = styled.img`
 `
 
 export const FeaturesContainer = styled.div`
-  height:90vh;
+  height:70vh;
   width:80%;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
+  @media (max-width:768px){
+    height:100vh;
+  }
   .textContent{
     width:50%;
   }
@@ -208,4 +214,89 @@ export const FeaturesCardsContainer = styled.div`
   justify-content: center;
   width:100%;
   margin: 0 auto;
+`
+
+export const MetricsContainer = styled.div`
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  height:60vh;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+`
+
+export const MetricsTextContainer = styled.div`
+   flex: 0 0 35%;
+   padding:10px;
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+   align-items:center;
+`
+
+export const MetricsHeading = styled.h2`
+  font-size: 30px;
+  color: #000000;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+`
+
+export const MetricsPara = styled.p`
+  font-size:16px;
+  color: #37383c;
+  line-height: 1.6;
+`
+
+export const MetricsCardsContainer = styled.div`
+  flex: 0 0 60%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+export const FAQContainer = styled.div`
+  height: 90vh;
+  width:90%;
+  padding: 20px 20px;
+`;
+
+export const FAQHeading = styled.h2`
+  color: #000000;
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  text-align: left;
+`;
+
+export const FAQDescription = styled.p`
+  color: #37383c;
+  text-align: left;
+  max-width: 600px;
+  margin-bottom: 48px;
+  line-height: 1.6;
+`;
+
+export const FAQItemsContainer = styled.div`
+  margin-top: 20px;
+  min-width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+`;
+export const LineSeperator = styled.hr`
+  color:#000000;
+  width:80%;
 `

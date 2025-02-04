@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 import Home from './pages/Home/Home'
 import ExperienceDetail from './components/InterviewExperience/ExperienceDetail'
 import MockInterviews from './components/IntervirePreperation/MockInterviews/MockInterviews'
@@ -30,6 +31,7 @@ export default function App() {
         <Route path='/Programming/:name' element={<Programming />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   )
 }
