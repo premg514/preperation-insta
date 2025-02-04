@@ -288,12 +288,13 @@ export const FAQDescription = styled.p`
 `;
 
 export const FAQItemsContainer = styled.div`
-  margin-top: 20px;
+  border-top:1px solid #e5e7eb;
   min-width: 100%;
   max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
   
 `;
 export const LineSeperator = styled.hr`

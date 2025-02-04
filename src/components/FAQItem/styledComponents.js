@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const FAQItemContainer = styled.div`
   border-bottom: 1px solid #e5e7eb;
   padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
   margin-bottom: 1.5rem;
 `
 
