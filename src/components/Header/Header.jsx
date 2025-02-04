@@ -59,7 +59,7 @@ export default function Header() {
     <NavDiv>
       <Nav>
         <MenuButton onClick={() => setMenu(!menu)}>
-          <IoMdMenu />
+          <IoMdMenu fontSize='28px' />
         </MenuButton>
 
         <Logo onClick={() => navigate('/')} >brix</Logo>

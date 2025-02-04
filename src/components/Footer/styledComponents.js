@@ -18,10 +18,15 @@ export const TopSection = styled.div`
   margin-bottom: 48px;
   flex-wrap: wrap;
   gap: 32px;
+  @media (max-width:480px){
+    width:100%;
+    flex-direction:column;
+  }
 `;
 
 export const LogoSection = styled.div`
   max-width: 300px;
+  flex:1;
 `;
 
 export const Logo = styled.h1`
@@ -38,6 +43,11 @@ export const LogoDescription = styled.p`
 
 export const NewsletterSection = styled.div`
   max-width: 400px;
+  flex:1;
+
+  @media(max-width:480px){
+    width:100%;
+  }
 `;
 
 export const NewsletterTitle = styled.h3`
@@ -48,6 +58,10 @@ export const NewsletterTitle = styled.h3`
 export const NewsletterForm = styled.form`
   display: flex;
   gap: 8px;
+  @media(max-width:480px){
+    flex-direction:column;
+    width:100%;
+  }
 `;
 
 export const EmailInput = styled.input`

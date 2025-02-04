@@ -36,10 +36,25 @@ export const Nav = styled.nav`
   width:100%;
 
   
-  @media (max-width: ${BREAKPOINTS.mobile}) {
+  @media (max-width: ${BREAKPOINTS.tablet}) {
     padding: 0.75rem;
+    justify-content: flex-start;
   }
 `;
+
+export const MenuButton = styled.button`
+  display: none;
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: ${COLORS.text};
+  
+  @media (max-width: ${BREAKPOINTS.tablet}) {
+    display: block;
+  }
+`;
+
 
 export const NavOptions = styled.div`
   display: flex;
@@ -253,13 +268,13 @@ export const NavOptionsMobile = styled.div`
     flex-direction: column;
     align-items: flex-start;
     padding: 10px;
-     color:#ffffff;
-  background: ${COLORS.background};
-  border: 1px solid ${COLORS.border};
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  min-width: 220px;
-  padding: 0.5rem;
+    color:#ffffff;
+    background: ${COLORS.background};
+    border: 1px solid ${COLORS.border};
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    min-width: 220px;
+    padding: 0.5rem;
 
     position: absolute;
     top: 40px;
@@ -275,8 +290,7 @@ font-weight: 500;
 padding: 0.5rem 1rem;
 border-radius: 0.375rem;
 border: 1px solid transparent;
-background: transparent;
-color: ${COLORS.text};
+color: #000000;
 cursor: pointer;
 transition: all 0.2s ease;
 display: flex;
@@ -284,24 +298,7 @@ align-items: center;
 gap: 0.5rem;
 
 &:hover {
-  background: ${COLORS.hover};
-  color: ${COLORS.primary};
+  
 }
 
-&:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px ${COLORS.primary}20;
-}
-`;
-export const MenuButton = styled.button`
-  display: none;
-  padding: 0.5rem;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  color: ${COLORS.text};
-  
-  @media (max-width: ${BREAKPOINTS.tablet}) {
-    display: block;
-  }
 `;
